@@ -3,9 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import WelcomeMessage from './components/WelcomeMessage'
-import Header from './components/Header'
-import Main from './components/main'
-import Footer from './components/footer'
+import Header from './Header Component/Header'
+import MainContent from './Main Component/MainContent'
+import Footer from './Footer Component/Footer'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <>
     <WelcomeMessage />
     <Header />
-    <Main />
+    <MainContent />
     <Footer />
       <div>
         <a href="https://vite.dev" target="_blank">
