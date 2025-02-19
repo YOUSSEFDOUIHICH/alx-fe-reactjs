@@ -3,15 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import WelcomeMessage from './components/WelcomeMessage'
-import Welcome from './welcome'
+import Header from './components/Header'
+import Main from './components/main'
+import Footer from './components/footer'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Welcome />
     <WelcomeMessage />
+    <Header />
+    <Main />
+    <Footer />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
