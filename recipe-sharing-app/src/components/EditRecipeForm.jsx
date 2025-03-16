@@ -6,8 +6,9 @@ const EditRecipeForm = ({ recipe }) => {
   const [description, setDescription] = useState(recipe.description);
   const updateRecipe = useRecipeStore((state) => state.updateRecipe);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+
     updateRecipe(recipe.id, { title, description });
   };
 
@@ -17,10 +18,12 @@ const EditRecipeForm = ({ recipe }) => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        required
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        required
       />
       <button type="submit">Modifier</button>
     </form>
