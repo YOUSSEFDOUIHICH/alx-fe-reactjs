@@ -27,9 +27,9 @@ function RegistrationForm() {
     };
   return (
     <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='username'name="username" value={User.username} onChange={handleChange} />
-        <input type="text" placeholder='email'name="email" value={User.email} onChange={handleChange} />
-        <input type="text" placeholder='password'name="password" value={User.password}onChange={handleChange} />
+        <input type="text" placeholder='username'name="username" value={username} onChange={handleChange} />
+        <input type="text" placeholder='email'name="email" value={email} onChange={handleChange} />
+        <input type="text" placeholder='password'name="password" value={password}onChange={handleChange} />
         <button type="submit">S'inscrire</button>
     </form>
   )
