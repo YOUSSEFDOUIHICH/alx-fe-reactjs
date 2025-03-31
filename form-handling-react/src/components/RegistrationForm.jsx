@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 
 function RegistrationForm() {
-    const [User , setUser] = useState({
-        username: "",
-        email: "",
-        password: "",
+    const [username , setusername] = useState({
+        username: ""
+        
+    });
+    const [email , setemail] = useState({
+        email:""
+
+    });
+    const [password , setpassword] = useState({
+        password:""
     });
 
     const handleChange = (e) => {
-        setUser({
-            ...User,
+        setusername({
+            ...username,
             [e.target.name]: e.target.value,
         });
     };
@@ -17,7 +23,7 @@ function RegistrationForm() {
         e.preventDefault();
         
         // Vérification si tous les champs sont remplis
-        if (!User.username || !User.email || !User.password) {
+        if (!username || !email || !password) {
             alert("Tous les champs sont obligatoires !");
             return;
         }
