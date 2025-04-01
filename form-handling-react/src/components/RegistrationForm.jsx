@@ -1,35 +1,26 @@
 import React, { useState } from 'react'
 
 function RegistrationForm() {
-    const [username , setusername] = useState({
-        username: ""
-        
-    });
-    const [email , setemail] = useState({
-        email:""
-
-    });
-    const [password , setpassword] = useState({
-        password:""
+    const [User , setUser] = useState({
+        username: "",
+        email: "",
+        password: "",
     });
 
     const handleChange = (e) => {
-        setusername({
-            ...username,
+        setUser({
+            ...User,
             [e.target.name]: e.target.value,
         });
     };
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        // Vérification si tous les champs sont remplis
-        if (!username || !email || !password) {
-            alert("Tous les champs sont obligatoires !");
-            return;
-        }
-
-        console.log("Données soumises :", User);
-        alert("Inscription réussie !");
+        let newErrors = {};
+        if (!username.email) newErrors.email = "L'email est requis.";
+        if (!email.password) newErrors.password = "Le mot de passe est requis.";
+        if (!password.username) newErrors.username = "Le nom d'utilisateur est requis.";
+        return newErrors;
     };
   return (
     <form onSubmit={handleSubmit}>
