@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 function RegistrationForm() {
+    const [errors, setErrors] = useState({});
     const [User , setUser] = useState({
         username: "",
         email: "",
@@ -13,14 +14,24 @@ function RegistrationForm() {
             [e.target.name]: e.target.value,
         });
     };
+    const validateForm = () => {
+        let newErrors = {};
+        if (!email) newErrors.email = "L'email est requis.";
+        if (!password) newErrors.password = "Le mot de passe est requis.";
+        if (!username) newErrors.username = "Le nom d'utilisateur est requis.";
+        return newErrors;
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
+        const validationErrors = validateForm();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+        } else {
+            console.log("Form Data Submitted:", User);
+            setErrors({});
+        }
         
-        let newErrors = {};
-        if (!username) newErrors.email = "L'email est requis.";
-        if (!email) newErrors.password = "Le mot de passe est requis.";
-        if (!password) newErrors.username = "Le nom d'utilisateur est requis.";
-        return newErrors;
+        
     };
   return (
     <form onSubmit={handleSubmit}>
