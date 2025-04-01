@@ -17,9 +17,9 @@ function RegistrationForm() {
         e.preventDefault();
         
         let newErrors = {};
-        if (!username.email) newErrors.email = "L'email est requis.";
-        if (!email.password) newErrors.password = "Le mot de passe est requis.";
-        if (!password.username) newErrors.username = "Le nom d'utilisateur est requis.";
+        if (!username) newErrors.email = "L'email est requis.";
+        if (!email) newErrors.password = "Le mot de passe est requis.";
+        if (!password) newErrors.username = "Le nom d'utilisateur est requis.";
         return newErrors;
     };
   return (
