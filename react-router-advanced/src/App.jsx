@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile/*" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/blog/:postId" element={<BlogPost />} />
+        <Route path="/blog/:Id" element={<BlogPost />} />
         <Route path="/profile/*" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
       </Routes>
     </Router>
