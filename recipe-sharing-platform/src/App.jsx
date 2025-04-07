@@ -1,14 +1,20 @@
 
 import './App.css'
 import HomePage from './components/HomePage'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RecipeDetail from './components/RecipDetail';
 
 function App() {
   
-
   return (
-    <div className="min-h-screen bg-gray-100">
-      <HomePage />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipe/:id" element={<RecipeDetail />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
