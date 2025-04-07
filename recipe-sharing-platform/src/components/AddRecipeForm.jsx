@@ -6,30 +6,33 @@ function AddRecipeForm() {
   const [steps, setSteps] = useState('');
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const newErrors = {};
-    if (!title.trim()) newErrors.title = "Title is required";
-    if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required";
-    if (!steps.trim()) newErrors.steps = "Steps are required";
-
-    // Ensure at least two ingredients
-    const ingredientList = ingredients.split(',').map(i => i.trim()).filter(Boolean);
-    if (ingredientList.length < 2) {
-      newErrors.ingredients = "Please list at least two ingredients";
-    }
-
-    setErrors(newErrors);
-
-    if (Object.keys(newErrors).length === 0) {
-      // Here you could add the logic to store or send the recipe data
-      alert("Recipe submitted successfully!");
-      setTitle('');
-      setIngredients('');
-      setSteps('');
-    }
-  };
+    const validate = () => {
+      const newErrors = {};
+  
+      if (!title.trim()) newErrors.title = "Title is required";
+      if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required";
+      if (!steps.trim()) newErrors.steps = "Steps are required";
+  
+      const ingredientList = ingredients.split(',').map(i => i.trim()).filter(Boolean);
+      if (ingredientList.length < 2) {
+        newErrors.ingredients = "Please list at least two ingredients";
+      }
+  
+      return newErrors;
+    };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      const validationErrors = validate();
+      setErrors(validationErrors);
+  
+      if (Object.keys(validationErrors).length === 0) {
+        alert("Recipe submitted successfully!");
+        setTitle('');
+        setIngredients('');
+        setSteps('');
+      }
+    };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg my-10">
