@@ -5,7 +5,7 @@
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
       "image": "https://via.placeholder.com/150",
       "ingredients" : ["Spaghetti", "Eggs", "Parmesan Cheese", "Bacon", "Black Pepper"],
-      "steps": [
+      "instructions": [
       "Boil the pasta.",
       "Cook the bacon until crispy.",
       "Mix eggs and cheese.",
@@ -18,7 +18,7 @@
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
       "image": "https://via.placeholder.com/150",
       "ingredients" : ["Spaghetti", "Eggs", "Parmesan Cheese", "Bacon", "Black Pepper"],
-      "steps": [
+      "instructions": [
       "Boil the pasta.",
       "Cook the bacon until crispy.",
       "Mix eggs and cheese.",
@@ -31,7 +31,7 @@
       "summary": "Tender beef strips in a creamy mushroom sauce served over noodles.",
       "image": "https://via.placeholder.com/150",
       "ingredients" : ["Spaghetti", "Eggs", "Parmesan Cheese", "Bacon", "Black Pepper"],
-      "steps": [
+      "instructions": [
       "Boil the pasta.",
       "Cook the bacon until crispy.",
       "Mix eggs and cheese.",

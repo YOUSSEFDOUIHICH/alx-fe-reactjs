@@ -37,7 +37,7 @@ function RecipeDetail() {
         <div>
           <h2 className="text-xl font-semibold text-blue-700 mb-2">Cooking Instructions</h2>
           <ol>
-            {recipe.steps.map((step, index) => (
+            {recipe.instructions.map((step, index) => (
               <li key={index}>{step}</li>
             ))}
           </ol>
