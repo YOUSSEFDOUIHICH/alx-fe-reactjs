@@ -1,8 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'https://api.github.com/users';
-
-export const fetchUser = async (username) => {
-  const res = await axios.get(`${BASE_URL}/${username}`);
-  return res.data;
+export const fetchUserData = async (username) => {
+  const response = await axios.get(`https://api.github.com/users/${username}`);
+  return response.data;
 };
