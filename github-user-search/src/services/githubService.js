@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const fetchAdvancedUserSearch = async (username, location, minRepos) => {
+const fetchUserData = async (username, location, minRepos) => {
   let query = '';
   if (username) query += `${username} in:login`;
   if (location) query += ` location:${location}`;
@@ -9,4 +9,4 @@ const fetchAdvancedUserSearch = async (username, location, minRepos) => {
   const response = await axios.get(`https://api.github.com/search/users?q=${encodeURIComponent(query)}`);
   return response.data.items;
 };
-export default fetchAdvancedUserSearch ;
+export default fetchUserData ;
